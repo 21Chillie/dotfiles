@@ -1,0 +1,11 @@
+// ────────────── Startup Applications ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
+
+    spawn-sh-at-startup "qs -c noctalia-shell"
+	spawn-at-startup "bash" "-c" "systemctl --user import-environment XDG_MENU_PREFIX && kbuildsycoca6 --noincremental"
+    // spawn-at-startup "kbuildsycoca6" "--noincremental" // generate "Open With" options in Dolphin
+    // spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
+	// spawn-at-startup "dbus-update-activation-environment --systemd --all"
+	// spawn-at-startup "sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP # Some fix idk"
+    // spawn-at-startup "kded6"
+	 

@@ -1,0 +1,41 @@
+    window-rule {
+        geometry-corner-radius 8 // Set every window radius to 20
+        clip-to-geometry true
+    }
+
+	window-rule {
+	    match title="^(Open|Choose|Save)(.*)$"
+	    match app-id="(xdg-desktop-portal)(.*)"
+	    match app-id="filepicker"
+	    match app-id="org.freedesktop.impl.portal.desktop.kde"
+	    default-column-width { proportion 0.5; }
+	    default-window-height { proportion 0.8; }
+	    open-floating true
+	    open-fullscreen false
+	}
+
+	window-rule {
+	    match app-id="firefox" title="- (.*) Mozilla Firefox"
+	    default-column-width { proportion 0.5; }
+	    default-window-height { proportion 0.6; }
+	    open-fullscreen false
+	}
+
+	window-rule {
+	    match app-id="zen-browser" title="- (.*) Zen Browser"
+	    default-column-width { proportion 0.5; }
+	    default-window-height { proportion 0.6; }
+	    open-fullscreen false
+	}
+
+    window-rule {
+        match app-id="vlc" title="- (.*) VLC media player"
+        default-column-width { proportion 0.5; }
+        default-window-height { proportion 0.6; }
+        open-fullscreen false
+    }
+
+	layer-rule {
+	  match namespace="^noctalia-overview*"
+	  place-within-backdrop true
+	}
