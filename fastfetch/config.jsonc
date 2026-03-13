@@ -1,0 +1,116 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "source": "/home/chillie/.config/fastfetch/ascii.txt",
+    "padding": {
+      "top": 0,
+      "left": 0
+    },
+    "color": {
+      "1": "#00d0ff"
+    }
+  },
+  "modules": [
+  "break",
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────┐"
+    },
+    {
+      "type": "os",
+      "key": "   OS",
+      "format": "{2}",
+      "keyColor": "#ff5c57"
+    },
+    {
+      "type": "kernel",
+      "key": "   Kernel",
+      "format": "{2}",
+      "keyColor": "#ff5c57"
+    },
+    {
+      "type": "packages",
+      "key": "   Packages",
+      "keyColor": "#5af78e"
+    },
+    {
+      "type": "display",
+      "key": "   Display",
+      "format": "{1}x{2} @ {3}Hz [{7}]",
+      "keyColor": "#5af78e"
+    },
+    {
+      "type": "terminal",
+      "key": "   Terminal",
+      "format": "{1}",
+      "keyColor": "#f3f99d"
+    },
+    {
+      "type": "de",
+      "key": "   DE",
+      "format": "{2} {3}",
+      "keyColor": "#f3f99d"
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────┘"
+    },
+    "break",
+    {
+      "type": "title",
+      "key": "  ",
+      "format": "{6} {7} {8}",
+      "keyColor": "#f1f1f0"
+    },
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────┐"
+    },
+    {
+      "type": "cpu",
+      "key": "   CPU",
+      "format": "{1} @ {7}",
+      "keyColor": "#afffff"
+    },
+    {
+      "type": "gpu",
+      "key": "  󰙵 GPU",
+      "format": "{2}",
+      "keyColor": "#afffff"
+    },
+    {
+      "type": "gpu",
+      "key": "   GPU Driver",
+      "format": "{3}",
+      "keyColor": "#ffafff"
+    },
+    {
+      "type": "memory",
+      "key": "   Memory",
+      "keyColor": "#ffafff"
+    },
+    {
+      "type": "disk",
+      "key": "   OS Age",
+      "folders": "/",
+      "keyColor": "#ff8700",
+      "format": "{days} days"
+    },
+    {
+      "type": "uptime",
+      "key": "  󰥔 Uptime",
+      "keyColor": "#ff8700"
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────┘"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 2,
+      "symbol": "circle"
+    },
+    "break"
+  ]
+}
