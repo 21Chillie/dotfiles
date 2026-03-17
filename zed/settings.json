@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "edit_predictions": {
+    "mode": "subtle",
     "provider": "zed"
   },
   "bottom_dock_layout": "contained",
