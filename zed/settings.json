@@ -7,6 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
+  "colorize_brackets": false,
   "edit_predictions": {
     "mode": "subtle",
     "provider": "zed"
@@ -39,6 +57,12 @@
     "stepping_granularity": "statement"
   },
   "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "enable_thinking": false
+    },
     "show_turn_stats": false,
     "dock": "left",
     "favorite_models": [],
@@ -65,7 +89,7 @@
   "pane_split_direction_horizontal": "down",
   "pane_split_direction_vertical": "right",
   "scrollbar": {
-    "show": "never"
+    "show": "auto"
   },
   "project_panel": {
     "indent_size": 14.0,
@@ -88,7 +112,7 @@
   "prettier": {
     "allowed": true
   },
-  "always_treat_brackets_as_autoclosed": false,
+  "always_treat_brackets_as_autoclosed": true,
   "indent_guides": {
     "coloring": "fixed",
     "background_coloring": "indent_aware"
@@ -137,7 +161,7 @@
   "use_system_path_prompts": true,
   "autosave": {
     "after_delay": {
-      "milliseconds": 1000
+      "milliseconds": 500
     }
   },
   "buffer_font_family": "JetBrainsMono Nerd Font",
@@ -154,6 +178,6 @@
   "theme": {
     "mode": "dark",
     "light": "Tokyo Night Light",
-    "dark": "Tokyo Night Moon",
+    "dark": "Tokyo Night Storm",
   },
 }
