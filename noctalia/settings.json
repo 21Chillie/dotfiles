@@ -124,6 +124,7 @@
             "left": [
                 {
                     "colorizeSystemIcon": "primary",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "rocket",
@@ -174,6 +175,7 @@
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
+                        "Vesktop"
                     ]
                 },
                 {
@@ -182,6 +184,7 @@
                         "defaultPeerAction": "copy-ip",
                         "hideDisconnected": false,
                         "hideMullvadExitNodes": true,
+                        "loginServer": "",
                         "pingCount": 5,
                         "refreshInterval": 5000,
                         "showIpAddress": true,
@@ -240,6 +243,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": false,
                     "icon": "noctalia",
@@ -486,7 +490,7 @@
         "firstDayOfWeek": -1,
         "hideWeatherCityName": true,
         "hideWeatherTimezone": false,
-        "name": "Makassar",
+        "name": "",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
@@ -566,7 +570,7 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": false,
+        "autoUpdate": true,
         "notifyUpdates": true
     },
     "sessionMenu": {
