@@ -1,7 +1,25 @@
     window-rule {
-        geometry-corner-radius 8 // Set every window radius to 20
+        geometry-corner-radius 12 // Set every window radius to 20
         clip-to-geometry true
+        opacity 0.9
+
+        background-effect {
+          blur true
+          xray false
+        }
     }
+
+	layer-rule {
+	  match namespace="^noctalia-overview*"
+	  place-within-backdrop true
+	}
+
+	layer-rule {
+	   match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+	   background-effect {
+	     xray false
+	   }
+	 }
 
 	window-rule {
 	    match title="^(Open|Choose|Save)(.*)$"
@@ -34,8 +52,11 @@
         default-window-height { proportion 0.6; }
         open-fullscreen false
     }
-
-	layer-rule {
-	  match namespace="^noctalia-overview*"
-	  place-within-backdrop true
+    
+	blur {
+	  passes 2        // more passes = stronger blur (default: 3)
+	  offset 3.0      // sample distance per pass (default: 3.0)
+	  noise 0.03      // grain overlay (default: 0.02)
+	  saturation 1.0  // color saturation boost (default: 1.5)
 	}
+    
