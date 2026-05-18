@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "proxy": "",
+  "buffer_line_height": "comfortable",
+  "preferred_line_length": 100,
   "enable_language_server": true,
   "diagnostics_max_severity": "all",
   "cli_default_open_behavior": "existing_window",
@@ -35,11 +38,8 @@
       },
       "hard_tabs": false,
       "language_servers": [
-        // "tsgo",
         "vtsls",
         "typescript-language-server",
-        "oxlint",
-        "oxfmt",
         "tailwindcss-language-server",
       ],
     },
@@ -142,6 +142,7 @@
     "tree_view": true,
   },
   "outline_panel": {
+    "default_width": 300.0,
     "auto_fold_dirs": true,
     "auto_reveal_entries": true,
     "button": true,
@@ -153,6 +154,7 @@
     "show": "auto",
   },
   "project_panel": {
+    "default_width": 220.0,
     "indent_size": 14.0,
     "folder_icons": true,
     "button": true,
@@ -175,6 +177,7 @@
   },
   "always_treat_brackets_as_autoclosed": true,
   "indent_guides": {
+    "line_width": 1,
     "coloring": "fixed",
     "background_coloring": "indent_aware",
   },
@@ -219,6 +222,7 @@
     "line_numbers": true,
   },
   "minimap": {
+    "max_width_columns": 80,
     "show": "never",
   },
   "cursor_blink": true,
