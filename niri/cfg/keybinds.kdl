@@ -14,7 +14,7 @@ binds {
     Mod+ALT+L                           hotkey-overlay-title="Lock Screen: noctalia lock" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
     Mod+Shift+Q                         hotkey-overlay-title="Session Menu: noctalia session" { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
     CTRL+SHIFT+ESCAPE					hotkey-overlay-title="Open System Monitor" { spawn-sh "kitty -e btop"; }
-	Mod+G                         	    hotkey-overlay-title="Open Game Launcher: Heroic" { spawn "heroic-games-launcher"; }
+	Mod+G                         	    hotkey-overlay-title="Open Game Launcher: Heroic" { spawn "heroic"; }
 	CTRL+SHIFT+L					hotkey-overlay-title="Open Color Picker" { spawn-sh "hyprpicker"; }
 
     // Please choose your own file manager.
