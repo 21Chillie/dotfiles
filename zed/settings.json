@@ -7,7 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "go_to_definition_scroll_strategy": "center",
+  "lsp_highlight_debounce": 75,
+  "document_symbols": "off",
+  "language_models": {
+    "lmstudio": {
+      "api_url": "http://127.0.0.1:2121/api/v0",
+      "api_key": "key"
+    },
+    "openai_compatible": {}
+  },
+  "cli_default_open_behavior": "existing_window",
+  "go_to_definition_scroll_strategy": "top",
   "hover_popover_enabled": true,
   "proxy": "",
   "git": {
@@ -61,11 +71,14 @@
   },
   "use_smartcase_search": true,
   "prettier": {
-    "allowed": true
+    "allowed": false
   },
   "diagnostics": {
+    "lsp_pull_diagnostics": {
+      "enabled": true
+    },
     "inline": {
-      "padding": 2,
+      "padding": 4,
       "min_column": 0,
       "update_debounce_ms": 150,
       "enabled": true
@@ -80,6 +93,12 @@
     "enabled": false
   },
   "edit_predictions": {
+    "provider": "zed",
+    "open_ai_compatible_api": {
+      "model": "",
+      "api_url": "",
+      "prompt_format": "infer"
+    },
     "allow_data_collection": "no",
     "mode": "subtle"
   },
@@ -97,6 +116,7 @@
     "breadcrumbs": false
   },
   "git_panel": {
+    "dock": "left",
     "collapse_untracked_diff": false,
     "folder_icons": false,
     "diff_stats": true,
@@ -117,14 +137,15 @@
     "enabled": false
   },
   "agent": {
+    "default_profile": "ask",
     "show_turn_stats": true,
     "play_sound_when_agent_done": "when_hidden",
     "single_file_review": true,
     "flexible": false,
     "default_width": 320.0,
     "default_model": {
-      "provider": "google",
-      "model": "gemini-3-flash-preview",
+      "provider": "lmstudio",
+      "model": "qwen3.5-9b",
       "enable_thinking": false
     },
     "favorite_models": [],
@@ -189,7 +210,11 @@
   },
   "base_keymap": "VSCode",
   "agent_servers": {
-    "github-copilot-cli": {
+    "opencode": {
+      "default_config_options": {
+        "model": "local/qwen3.5-9b-deepseek-v4-flash",
+        "mode": "plan"
+      },
       "type": "registry"
     },
     "codex-acp": {
@@ -199,8 +224,331 @@
   "ui_font_size": 14.0,
   "buffer_font_size": 13.5,
   "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Tokyo Night Storm",
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "One Dark"
   },
+  //----------- LSP config ------------
+  "lsp": {
+    "oxlint": {
+      "initialization_options": {
+        "settings": {
+          "configPath": null,
+          "run": "onType",
+          "disableNestedConfig": false,
+          "fixKind": "safe_fix",
+          "typeAware": true,
+          "unusedDisableDirectives": "deny"
+        }
+      }
+    },
+    "oxfmt": {
+      "initialization_options": {
+        "settings": {
+          "fmt.configPath": null,
+          "run": "onSave"
+        }
+      }
+    },
+
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        }
+      }
+    },
+
+    "tailwindcss-language-server": {
+      "settings": {
+        "experimental": {
+          "classRegex": [
+            "\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttributeNS\\(.*,\\s*['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttribute\\(['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.add\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.remove\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]",
+            "class=\"([^\"]*)\""
+          ]
+        }
+      }
+    },
+    "vtsls": {
+      "settings": {
+        // For JavaScript:
+        "javascript": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all",
+              "suppressWhenArgumentMatchesName": false
+            },
+            "parameterTypes": {
+              "enabled": true
+            },
+            "variableTypes": {
+              "enabled": true,
+              "suppressWhenTypeMatchesName": true
+            },
+            "propertyDeclarationTypes": {
+              "enabled": true
+            },
+            "functionLikeReturnTypes": {
+              "enabled": true
+            },
+            "enumMemberValues": {
+              "enabled": true
+            }
+          }
+        },
+        // For TypeScript:
+        "typescript": {
+          "inlayHints": {
+            "parameterNames": {
+              "enabled": "all",
+              "suppressWhenArgumentMatchesName": false
+            },
+            "parameterTypes": {
+              "enabled": true
+            },
+            "variableTypes": {
+              "enabled": true,
+              "suppressWhenTypeMatchesName": true
+            },
+            "propertyDeclarationTypes": {
+              "enabled": true
+            },
+            "functionLikeReturnTypes": {
+              "enabled": true
+            },
+            "enumMemberValues": {
+              "enabled": true
+            }
+          }
+        }
+      }
+    }
+  },
+  // --------- Config for each languages ------------
+  "languages": {
+    "CSS": {
+      "language_servers": [
+        "tailwindcss-intellisense-css",
+        "!vscode-css-language-server",
+        "!biome",
+        "..."
+      ],
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "GraphQL": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "HTML": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "JavaScript": {
+      "language_servers": [
+        "vtsls",
+        "oxlint",
+        "oxfmt",
+        "!typescript-language-server",
+        "!biome",
+        "!eslint",
+        "..."
+      ],
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        },
+        {
+          "code_action": "source.fixAll.oxc"
+        }
+      ]
+    },
+
+    "JSON": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "JSONC": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "Markdown": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "SCSS": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "TypeScript": {
+      "language_servers": [
+        "vtsls",
+        "oxlint",
+        "oxfmt",
+        "!tsgo",
+        "!typescript-language-server",
+        "!eslint",
+        "!biome",
+        "..."
+      ],
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "TSX": {
+      "language_servers": [
+        "vtsls",
+        "oxlint",
+        "oxfmt",
+        "!tsgo",
+        "!typescript-language-server",
+        "!eslint",
+        "!biome",
+        "..."
+      ],
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "Vue.js": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "YAML": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": false
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt"
+          }
+        }
+      ]
+    },
+
+    "SQL": {
+      "formatter": {
+        "external": {
+          "command": "sql-formatter",
+          "arguments": ["--language", "postgresql"]
+        }
+      }
+    }
+  }
 }
