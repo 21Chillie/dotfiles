@@ -7,548 +7,382 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "lsp_highlight_debounce": 75,
-  "document_symbols": "off",
-  "language_models": {
-    "lmstudio": {
-      "api_url": "http://127.0.0.1:2121/api/v0",
-      "api_key": "key"
-    },
-    "openai_compatible": {}
-  },
-  "cli_default_open_behavior": "existing_window",
-  "go_to_definition_scroll_strategy": "top",
-  "hover_popover_enabled": true,
-  "proxy": "",
-  "git": {
-    "inline_blame": {
-      "show_commit_summary": true,
-      "padding": 4
+	"session": {
+  
+ },
+ "ssh_connections": [
+  {
+   "host": "chillie-server",
+   "args": [],
+   "projects": [
+    {
+     "paths": [
+      "/srv"
+     ]
     }
-  },
-  "collaboration_panel": {
-    "button": false
-  },
-  "outline_panel": {
-    "indent_size": 18.0,
-    "default_width": 220.0,
-    "dock": "left",
-    "button": true
-  },
-  "project_panel": {
-    "hide_hidden": false,
-    "hide_root": false,
-    "indent_guides": {
-      "show": "always"
-    },
-    "git_status_indicator": true,
-    "diagnostic_badges": true,
-    "show_diagnostics": "errors",
-    "bold_folder_labels": false,
-    "indent_size": 18.0,
-    "entry_spacing": "standard",
-    "default_width": 220.0
-  },
-  "bottom_dock_layout": "contained",
-  "tab_bar": {
-    "show_pinned_tabs_in_separate_row": false,
-    "show": true
-  },
-  "title_bar": {
-    "button_layout": "platform_default",
-    "show_menus": false,
-    "show_branch_status_icon": true
-  },
-  "status_bar": {
-    "active_language_button": true,
-    "show_active_file": false,
-    "line_endings_button": true,
-    "active_encoding_button": "non_utf8"
-  },
-  "close_on_file_delete": true,
-  "search": {
-    "include_ignored": false
-  },
-  "use_smartcase_search": true,
-  "prettier": {
-    "allowed": false
-  },
-  "diagnostics": {
-    "lsp_pull_diagnostics": {
-      "enabled": true
-    },
-    "inline": {
-      "padding": 4,
-      "min_column": 0,
-      "update_debounce_ms": 150,
-      "enabled": true
-    }
-  },
-  "colorize_brackets": true,
-  "code_lens": "on",
-  "inlay_hints": {
-    "show_value_hints": true,
-    "show_type_hints": true,
-    "show_background": false,
-    "enabled": false
-  },
-  "edit_predictions": {
-    "provider": "zed",
-    "open_ai_compatible_api": {
-      "model": "",
-      "api_url": "",
-      "prompt_format": "infer"
-    },
-    "allow_data_collection": "no",
-    "mode": "subtle"
-  },
-  "always_treat_brackets_as_autoclosed": true,
-  "indent_guides": {
-    "background_coloring": "disabled",
-    "line_width": 1
-  },
-  "auto_indent": "syntax_aware",
-  "hard_tabs": false,
-  "toolbar": {
-    "code_actions": true,
-    "selections_menu": true,
-    "quick_actions": false,
-    "breadcrumbs": false
-  },
-  "git_panel": {
-    "dock": "left",
-    "collapse_untracked_diff": false,
-    "folder_icons": false,
-    "diff_stats": true,
-    "show_count_badge": true,
-    "file_icons": false,
-    "default_width": 280.0,
-    "tree_view": true
-  },
-  "scrollbar": {
-    "axes": {
-      "horizontal": false
-    },
-    "cursors": true,
-    "show": "auto"
-  },
-  "auto_signature_help": false,
-  "which_key": {
-    "enabled": false
-  },
-  "agent": {
-    "default_profile": "ask",
-    "show_turn_stats": true,
-    "play_sound_when_agent_done": "when_hidden",
-    "single_file_review": true,
-    "flexible": false,
-    "default_width": 320.0,
-    "default_model": {
-      "provider": "lmstudio",
-      "model": "qwen3.5-9b",
-      "enable_thinking": false
-    },
-    "favorite_models": [],
-    "model_parameters": []
-  },
-  "ui_font_weight": 400.0,
-  "ui_font_family": "Satoshi",
-  "buffer_font_weight": 400.0,
-  "icon_theme": "Material Icon Theme",
-  "auto_update": false,
-  "terminal": {
-    "toolbar": {
-      "breadcrumbs": false
-    },
-    "default_height": 240.0,
-    "font_size": 13.0,
-    "working_directory": "current_project_directory",
-    "show_count_badge": true,
-    "cursor_shape": "underline",
-    "blinking": "on"
-  },
-  "tabs": {
-    "show_close_button": "hover",
-    "show_diagnostics": "errors",
-    "file_icons": true,
-    "git_status": true,
-    "close_position": "right"
-  },
-  "multi_cursor_modifier": "cmd_or_ctrl",
-  "sticky_scroll": {
-    "enabled": true
-  },
-  "gutter": {
-    "breakpoints": true,
-    "runnables": true,
-    "line_numbers": true
-  },
-  "minimap": {
-    "show": "never"
-  },
-  "hover_popover_sticky": true,
-  "cursor_blink": true,
-  "max_tabs": 5,
-  "use_system_path_prompts": true,
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 1000
-    }
-  },
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "auto_indent_on_paste": true,
-  "linked_edits": true,
-  "show_whitespaces": "boundary",
-  "show_edit_predictions": true,
-  "line_ending": "prefer_lf",
-  "ensure_final_newline_on_save": true,
-  "soft_wrap": "editor_width",
-  "tab_size": 2,
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "base_keymap": "VSCode",
-  "agent_servers": {
-    "opencode": {
-      "default_config_options": {
-        "model": "local/qwen3.5-9b-deepseek-v4-flash",
-        "mode": "plan"
-      },
-      "type": "registry"
-    },
-    "codex-acp": {
-      "type": "registry"
-    }
-  },
-  "ui_font_size": 14.0,
-  "buffer_font_size": 13.5,
-  "theme": {
-    "mode": "dark",
-    "light": "Ayu Light",
-    "dark": "Tokyo Night Moon"
-  },
-  //----------- LSP config ------------
-  "lsp": {
-    "oxlint": {
-      "initialization_options": {
-        "settings": {
-          "configPath": null,
-          "run": "onType",
-          "disableNestedConfig": false,
-          "fixKind": "safe_fix",
-          "typeAware": true,
-          "unusedDisableDirectives": "deny"
-        }
-      }
-    },
-    "oxfmt": {
-      "initialization_options": {
-        "settings": {
-          "fmt.configPath": null,
-          "run": "onSave"
-        }
-      }
-    },
-
-    "vscode-css-language-server": {
-      "settings": {
-        "css": {
-          "lint": {
-            "unknownAtRules": "ignore"
-          }
-        }
-      }
-    },
-
-    "tailwindcss-language-server": {
-      "settings": {
-        "experimental": {
-          "classRegex": [
-            "\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]",
-            "\\.setAttributeNS\\(.*,\\s*['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
-            "\\.setAttribute\\(['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
-            "\\.classList\\.add\\(['\"]([^'\"]*)['\"]",
-            "\\.classList\\.remove\\(['\"]([^'\"]*)['\"]",
-            "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
-            "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
-            "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
-            "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]",
-            "class=\"([^\"]*)\""
-          ]
-        }
-      }
-    },
-    "vtsls": {
-      "settings": {
-        // For JavaScript:
-        "javascript": {
-          "inlayHints": {
-            "parameterNames": {
-              "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
-            },
-            "parameterTypes": {
-              "enabled": true
-            },
-            "variableTypes": {
-              "enabled": true,
-              "suppressWhenTypeMatchesName": true
-            },
-            "propertyDeclarationTypes": {
-              "enabled": true
-            },
-            "functionLikeReturnTypes": {
-              "enabled": true
-            },
-            "enumMemberValues": {
-              "enabled": true
-            }
-          }
-        },
-        // For TypeScript:
-        "typescript": {
-          "inlayHints": {
-            "parameterNames": {
-              "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
-            },
-            "parameterTypes": {
-              "enabled": true
-            },
-            "variableTypes": {
-              "enabled": true,
-              "suppressWhenTypeMatchesName": true
-            },
-            "propertyDeclarationTypes": {
-              "enabled": true
-            },
-            "functionLikeReturnTypes": {
-              "enabled": true
-            },
-            "enumMemberValues": {
-              "enabled": true
-            }
-          }
-        }
-      }
-    }
-  },
-  // --------- Config for each languages ------------
-  "languages": {
-    "CSS": {
-      "language_servers": [
-        "tailwindcss-intellisense-css",
-        "!vscode-css-language-server",
-        "!biome",
-        "..."
-      ],
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "GraphQL": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "HTML": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "JavaScript": {
-      "language_servers": [
-        "vtsls",
-        "oxlint",
-        "oxfmt",
-        "!typescript-language-server",
-        "!biome",
-        "!eslint",
-        "..."
-      ],
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        },
-        {
-          "code_action": "source.fixAll.oxc"
-        }
-      ]
-    },
-
-    "JSON": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "JSONC": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "Markdown": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "SCSS": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "TypeScript": {
-      "language_servers": [
-        "vtsls",
-        "oxlint",
-        "oxfmt",
-        "!tsgo",
-        "!typescript-language-server",
-        "!eslint",
-        "!biome",
-        "..."
-      ],
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "TSX": {
-      "language_servers": [
-        "vtsls",
-        "oxlint",
-        "oxfmt",
-        "!tsgo",
-        "!typescript-language-server",
-        "!eslint",
-        "!biome",
-        "..."
-      ],
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "Vue.js": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "YAML": {
-      "format_on_save": "on",
-      "prettier": {
-        "allowed": false
-      },
-      "formatter": [
-        {
-          "language_server": {
-            "name": "oxfmt"
-          }
-        }
-      ]
-    },
-
-    "SQL": {
-      "formatter": {
-        "external": {
-          "command": "sql-formatter",
-          "arguments": ["--language", "postgresql"]
-        }
-      }
-    }
+   ]
   }
+ ],
+ "completions": {
+		"lsp": true
+	},
+	"show_wrap_guides": true,
+	"rounded_selection": true,
+	"hide_mouse": "on_typing_and_action",
+	"text_rendering_mode": "platform_default",
+	"use_on_type_format": true,
+	"format_on_save": "on",
+	"lsp_highlight_debounce": 75,
+	"document_symbols": "off",
+	"language_models": {
+		"lmstudio": {
+			"api_url": "http://127.0.0.1:2121/api/v0",
+			"api_key": "key"
+		},
+		"openai_compatible": {}
+	},
+	"cli_default_open_behavior": "existing_window",
+	"hover_popover_enabled": true,
+	"proxy": "",
+	"git": {
+		"inline_blame": {
+			"show_commit_summary": true,
+			"padding": 4
+		}
+	},
+	"collaboration_panel": {
+		"button": false
+	},
+	"outline_panel": {
+		"indent_size": 16.0,
+		"default_width": 220.0,
+		"dock": "left",
+		"button": true
+	},
+	"project_panel": {
+		"hide_hidden": false,
+		"hide_root": false,
+		"indent_guides": {
+			"show": "always"
+		},
+		"git_status_indicator": true,
+		"diagnostic_badges": true,
+		"show_diagnostics": "errors",
+		"bold_folder_labels": false,
+		"indent_size": 12.0,
+		"entry_spacing": "standard",
+		"default_width": 220.0
+	},
+	"bottom_dock_layout": "contained",
+	"tab_bar": {
+		"show_pinned_tabs_in_separate_row": false,
+		"show": true
+	},
+	"title_bar": {
+		"button_layout": "platform_default",
+		"show_menus": false,
+		"show_branch_status_icon": true
+	},
+	"status_bar": {
+		"active_language_button": true,
+		"show_active_file": false,
+		"line_endings_button": true,
+		"active_encoding_button": "non_utf8"
+	},
+	"close_on_file_delete": true,
+	"search": {
+		"include_ignored": false
+	},
+	"prettier": {
+		"allowed": false
+	},
+	"diagnostics": {
+		"lsp_pull_diagnostics": {
+			"enabled": true
+		},
+		"inline": {
+			"enabled": true,
+			"update_debounce_ms": 150
+		}
+	},
+	"colorize_brackets": true,
+	"inlay_hints": {
+		"show_value_hints": true,
+		"show_type_hints": true,
+		"show_background": false,
+		"enabled": false
+	},
+	"edit_predictions": {
+		"provider": "zed",
+		"open_ai_compatible_api": {
+			"model": "",
+			"api_url": "",
+			"prompt_format": "infer"
+		},
+		"allow_data_collection": "no",
+		"mode": "subtle"
+	},
+	"always_treat_brackets_as_autoclosed": true,
+	"indent_guides": {
+		"background_coloring": "disabled",
+		"line_width": 1
+	},
+	"auto_indent": "syntax_aware",
+	"hard_tabs": false,
+	"toolbar": {
+		"code_actions": true,
+		"selections_menu": true,
+		"quick_actions": false,
+		"breadcrumbs": false
+	},
+	"git_panel": {
+		"dock": "left",
+		"collapse_untracked_diff": false,
+		"folder_icons": false,
+		"diff_stats": true,
+		"show_count_badge": true,
+		"file_icons": false,
+		"default_width": 280.0,
+		"tree_view": true
+	},
+	"scrollbar": {
+		"axes": {
+			"horizontal": false
+		},
+		"cursors": true,
+		"show": "auto"
+	},
+	"auto_signature_help": false,
+	"which_key": {
+		"enabled": false
+	},
+	"agent": {
+		"thinking_display": "always_collapsed",
+		"default_profile": "ask",
+		"show_turn_stats": true,
+		"play_sound_when_agent_done": "when_hidden",
+		"single_file_review": true,
+		"flexible": true,
+		"default_width": 320.0,
+		"default_model": {
+			"provider": "lmstudio",
+			"model": "qwopus3.5-9b-coder-mtp",
+			"enable_thinking": false
+		},
+		"favorite_models": [],
+		"model_parameters": []
+	},
+	"ui_font_weight": 400.0,
+	"ui_font_family": "Satoshi",
+	"buffer_font_weight": 400.0,
+	"icon_theme": "Material Icon Theme",
+	"auto_update": false,
+	"terminal": {
+		"toolbar": {
+			"breadcrumbs": false
+		},
+		"default_height": 240.0,
+		"font_size": 13.0,
+		"working_directory": "current_project_directory",
+		"show_count_badge": true,
+		"cursor_shape": "underline",
+		"blinking": "on"
+	},
+	"tabs": {
+		"show_close_button": "hover",
+		"show_diagnostics": "errors",
+		"file_icons": true,
+		"git_status": true,
+		"close_position": "right"
+	},
+	"multi_cursor_modifier": "cmd_or_ctrl",
+	"sticky_scroll": {
+		"enabled": true
+	},
+	"gutter": {
+		"breakpoints": true,
+		"runnables": true,
+		"line_numbers": true
+	},
+	"minimap": {
+		"show": "never"
+	},
+	"hover_popover_sticky": true,
+	"cursor_blink": true,
+	"max_tabs": 5,
+	"use_system_path_prompts": true,
+	"autosave": {
+		"after_delay": {
+			"milliseconds": 1000
+		}
+	},
+	"buffer_font_family": "JetBrainsMono Nerd Font Mono",
+	"auto_indent_on_paste": true,
+	"linked_edits": true,
+	"show_whitespaces": "boundary",
+	"show_edit_predictions": true,
+	"line_ending": "prefer_lf",
+	"ensure_final_newline_on_save": true,
+	"soft_wrap": "editor_width",
+	"tab_size": 2,
+	"telemetry": {
+		"diagnostics": false,
+		"metrics": false
+	},
+	"base_keymap": "VSCode",
+	"agent_servers": {
+		"opencode": {
+			"default_config_options": {
+				"model": "local/qwen3.5-9b",
+				"mode": "plan"
+			},
+			"type": "registry"
+		},
+		"codex-acp": {
+			"type": "registry"
+		}
+	},
+	"ui_font_size": 14.0,
+	"buffer_font_size": 13.5,
+	"theme": {
+		"mode": "dark",
+		"light": "Ayu Light",
+		"dark": "Tokyo Night Storm"
+	},
+	//----------- LSP config ------------
+	"lsp": {
+		"biome": {
+			"settings": {
+				"require_config_file": false,
+				"config_path": "$HOME/.config/zed/biome.json"
+			}
+		},
+
+		"vscode-css-language-server": {
+			"settings": {
+				"css": {
+					"lint": {
+						"unknownAtRules": "ignore"
+					}
+				}
+			}
+		}
+	},
+
+	// --------- Config for each languages ------------
+	"languages": {
+		"Astro": {
+			"language_servers": ["!eslint", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"CSS": {
+			"language_servers": [
+				"tailwindcss-intellisense-css",
+				"vscode-css-language-server",
+				"!eslint",
+				"..."
+			],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"GraphQL": {
+			"language_servers": ["!eslint", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"HTML": {
+			"language_servers": ["!eslint", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"JSON": {
+			"language_servers": ["!eslint", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"JSONC": {
+			"language_servers": ["!eslint", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"JavaScript": {
+			"language_servers": ["!tsgo", "!eslint", "!typescript-language-server", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			},
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"Svelte": {
+			"language_servers": ["!eslint", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		},
+		"TSX": {
+			"inlay_hints": {},
+			"show_whitespaces": "selection",
+			"indent_guides": {
+				"coloring": "indent_aware",
+				"enabled": true
+			},
+			"hard_tabs": false,
+			"tab_size": 2,
+			"language_servers": ["!tsgo", "!eslint", "!typescript-language-server", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			},
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"TypeScript": {
+			"language_servers": ["!tsgo", "!eslint", "!typescript-language-server", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			},
+			"code_actions_on_format": {
+				"source.fixAll.biome": true,
+				"source.organizeImports.biome": true
+			}
+		},
+		"Vue.js": {
+			"language_servers": ["!eslint", "..."],
+			"formatter": {
+				"language_server": {
+					"name": "biome"
+				}
+			}
+		}
+	}
 }
