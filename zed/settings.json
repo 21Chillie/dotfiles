@@ -8,16 +8,26 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // --------- Editor Config ---------
+  "semantic_tokens": "combined",
+  "cli_default_open_behavior": "existing_window",
+  "show_edit_predictions": true,
   "language_models": {
     "lmstudio": {
       "api_url": "http://127.0.0.1:2121/api/v0",
     },
   },
   "agent_servers": {
-    "github-copilot-cli": {
+    "opencode": {
+      "default_config_options": {
+        "mode": "plan",
+        "model": "local/gemma-4-12b-it-qat",
+      },
       "type": "registry",
     },
     "codex-acp": {
+      "default_config_options": {
+        "model": "gpt-5.5",
+      },
       "type": "registry",
     },
   },
@@ -27,6 +37,12 @@
     "allow_data_collection": "no",
   },
   "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "qwopus3.5-9b-coder-mtp",
+      "enable_thinking": false,
+    },
     "show_turn_stats": true,
     "thinking_display": "always_collapsed",
     "play_sound_when_agent_done": "when_hidden",
@@ -161,7 +177,65 @@
     "dark": "Tokyo Night Storm",
   },
 
+  // Color for comments like in Better Comments Extension in VSCODE
+  "theme_overrides": {
+    "Tokyo Night Storm": {
+      "syntax": {
+        "constant.comment.todo": {
+          "color": "#4078f2ff",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "string.comment.info": {
+          "color": "#50a14fff",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "keyword.comment.warn": {
+          "color": "#c18401ff",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "property.comment.error": {
+          "color": "#ca1243ff",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "property.comment.error.prefix": {
+          "color": "#ff0000",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "property.comment.error.bracket": {
+          "color": "#000000dd",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "property.comment.error.user": {
+          "color": "#000000dd",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+      },
+    },
+  },
+
   // --------- LSP ---------
+  "global_lsp_settings": {
+    "semantic_token_rules": [
+      {
+        "token_type": "comment",
+      },
+    ],
+  },
+
   "lsp": {
     "eslint": {
       "settings": {
@@ -219,7 +293,7 @@
       },
 
       "prettier": {
-        "printWidth": 100,
+        "printWidth": 80,
         "tabWidth": 2,
         "useTabs": false,
         "semi": true,
@@ -238,7 +312,7 @@
       },
 
       "prettier": {
-        "printWidth": 100,
+        "printWidth": 80,
         "tabWidth": 2,
         "useTabs": false,
         "semi": true,
@@ -257,7 +331,7 @@
       },
 
       "prettier": {
-        "printWidth": 100,
+        "printWidth": 80,
         "tabWidth": 2,
         "useTabs": false,
         "semi": true,
@@ -276,7 +350,7 @@
 
     "HTML": {
       "prettier": {
-        "printWidth": 100,
+        "printWidth": 80,
         "tabWidth": 2,
         "useTabs": false,
         "bracketSameLine": true,
