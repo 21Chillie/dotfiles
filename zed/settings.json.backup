@@ -1,0 +1,384 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  // --------- Editor Config ---------
+  "restore_on_startup": "last_workspace",
+  "semantic_tokens": "combined",
+  "cli_default_open_behavior": "existing_window",
+  "show_edit_predictions": false,
+  "language_models": {
+    "lmstudio": {
+      "api_url": "http://127.0.0.1:2121/api/v0",
+    },
+  },
+  "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "mode": "plan",
+        "model": "local/gemma-4-12b-it-qat",
+      },
+      "type": "registry",
+    },
+    "codex-acp": {
+      "default_config_options": {
+        "model": "gpt-5.5",
+      },
+      "type": "registry",
+    },
+  },
+  "edit_predictions": {
+    "provider": "zed",
+    "mode": "subtle",
+    "allow_data_collection": "no",
+  },
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "gemma-4-12b-it-qat@q4_k_xl",
+      "enable_thinking": false,
+    },
+    "show_turn_stats": true,
+    "thinking_display": "always_collapsed",
+    "play_sound_when_agent_done": "when_hidden",
+    "flexible": false,
+    "default_width": 240.0,
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "git_panel": {
+    "commit_title_max_length": 0,
+    "show_count_badge": true,
+    "file_icons": false,
+    "tree_view": true,
+    "collapse_untracked_diff": false,
+    "sort_by_path": false,
+    "status_style": "icon",
+    "default_width": 240.0,
+    "dock": "left",
+  },
+  "outline_panel": {
+    "button": false,
+    "default_width": 220.0,
+    "file_icons": true,
+  },
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": false,
+    },
+    "default_height": 240.0,
+    "default_width": 640.0,
+    "blinking": "on",
+    "cursor_shape": "underline",
+    "font_size": 13.0,
+    "show_count_badge": true,
+  },
+  "tabs": {
+    "show_diagnostics": "all",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": true,
+    "show": true,
+  },
+  "title_bar": {
+    "show_branch_name": true,
+    "show_menus": false,
+    "show_user_picture": true,
+    "show_sign_in": true,
+    "show_user_menu": true,
+    "show_branch_status_icon": true,
+  },
+  "status_bar": {
+    "line_endings_button": true,
+    "active_encoding_button": "enabled",
+  },
+  "project_panel": {
+    "hide_root": false,
+    "git_status_indicator": true,
+    "diagnostic_badges": true,
+    "indent_size": 20.0,
+    "entry_spacing": "standard",
+    "default_width": 220.0,
+    "button": true,
+  },
+  "use_smartcase_search": true,
+  "diagnostics": {
+    "inline": {
+      "padding": 2,
+      "enabled": true,
+    },
+  },
+  "colorize_brackets": true,
+  "inlay_hints": {
+    "enabled": false,
+  },
+  "indent_guides": {
+    "background_coloring": "indent_aware",
+    "coloring": "indent_aware",
+  },
+  "soft_wrap": "editor_width",
+  "tab_size": 2,
+  "toolbar": {
+    "agent_review": false,
+    "selections_menu": false,
+    "quick_actions": false,
+    "breadcrumbs": false,
+  },
+  "scrollbar": {
+    "axes": {
+      "horizontal": false,
+      "vertical": true,
+    },
+  },
+  "inline_code_actions": true,
+  "gutter": {
+    "breakpoints": true,
+    "line_numbers": true,
+  },
+  "show_signature_help_after_edits": false,
+  "scroll_beyond_last_line": "one_page",
+  "sticky_scroll": {
+    "enabled": false,
+  },
+  "auto_signature_help": false,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "agent_ui_font_size": 14.0,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "auto_update": false,
+  "icon_theme": "Material Icon Theme",
+  "session": {
+    "trust_all_worktrees": false,
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 15.0,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "system",
+    "light": "Catppuccin Frappé",
+    "dark": "Catppuccin Mocha",
+  },
+
+  // Color for comments like in Better Comments Extension in VSCODE
+  "theme_overrides": {
+    "Tokyo Night Storm": {
+      "syntax": {
+        "constant.comment.todo": {
+          "color": "#4078f2ff",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "string.comment.info": {
+          "color": "#50a14fff",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "keyword.comment.warn": {
+          "color": "#c18401ff",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "property.comment.error": {
+          "color": "#ca1243ff",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "property.comment.error.prefix": {
+          "color": "#ff0000",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "property.comment.error.bracket": {
+          "color": "#000000dd",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+        "property.comment.error.user": {
+          "color": "#000000dd",
+          // "background_color": "#00000000",
+          // "font_weight": "bold",
+          // "font_style": "italic"
+        },
+      },
+    },
+  },
+
+  // --------- LSP ---------
+  "global_lsp_settings": {
+    "semantic_token_rules": [
+      {
+        "token_type": "comment",
+      },
+    ],
+  },
+
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "rulesCustomizations": [
+          { "rule": "style/*", "severity": "off", "fixable": true },
+          { "rule": "format/*", "severity": "off", "fixable": true },
+          { "rule": "*-indent", "severity": "off", "fixable": true },
+          { "rule": "*-spacing", "severity": "off", "fixable": true },
+          { "rule": "*-spaces", "severity": "off", "fixable": true },
+          { "rule": "*-order", "severity": "off", "fixable": true },
+          { "rule": "*-dangle", "severity": "off", "fixable": true },
+          { "rule": "*-newline", "severity": "off", "fixable": true },
+          { "rule": "*quotes", "severity": "off", "fixable": true },
+          { "rule": "*semi", "severity": "off", "fixable": true },
+        ],
+      },
+    },
+
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore",
+          },
+        },
+      },
+    },
+
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "ngClass", "styles"],
+        "experimental": {
+          "classRegex": [
+            "\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttributeNS\\(.*,\\s*['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttribute\\(['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.add\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.remove\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]",
+          ],
+        },
+      },
+    },
+  },
+
+  // Disable language server
+  "language_servers": ["!typescript-language-server", "..."],
+
+  // --------- Languages ---------
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true,
+      },
+
+      "prettier": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": false,
+        "quoteProps": "as-needed",
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "arrowParens": "always",
+        "endOfLine": "lf",
+      },
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true,
+      },
+
+      "prettier": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": false,
+        "quoteProps": "as-needed",
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "arrowParens": "always",
+        "endOfLine": "lf",
+      },
+    },
+    "TSX": {
+      "show_edit_predictions": true,
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true,
+      },
+
+      "prettier": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": false,
+        "jsxSingleQuote": false,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "bracketSameLine": true,
+        "arrowParens": "always",
+        "singleAttributePerLine": true,
+        "endOfLine": "lf",
+
+        "plugins": ["prettier-plugin-tailwindcss"],
+      },
+    },
+
+    "HTML": {
+      "prettier": {
+        "printWidth": 80,
+        "tabWidth": 2,
+        "useTabs": false,
+        "bracketSameLine": true,
+        "singleAttributePerLine": true,
+        "htmlWhitespaceSensitivity": "css",
+
+        "plugins": ["prettier-plugin-tailwindcss"],
+      },
+    },
+
+    "Markdown": {
+      "prettier": {
+        "allowed": true,
+        "parser": "markdown",
+        "proseWrap": "always",
+        "printWidth": 80,
+        "singleQuote": false,
+        "embeddedLanguageFormatting": "auto",
+
+        "tabWidth": 2,
+        "useTabs": false,
+        "endOfLine": "lf",
+      },
+    },
+  },
+}
