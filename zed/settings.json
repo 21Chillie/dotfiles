@@ -8,7 +8,18 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // --------- Editor Config ---------
-  "restore_on_startup": "last_workspace",
+  "ssh_connections": [
+    {
+      "host": "chillie-server",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/srv"],
+        },
+      ],
+    },
+  ],
+  "restore_on_startup": "launchpad",
   "semantic_tokens": "combined",
   "cli_default_open_behavior": "existing_window",
   "language_models": {
@@ -47,16 +58,19 @@
     },
   },
   "agent_servers": {
-    "opencode": {
+    "pi-acp": {
       "default_config_options": {
-        "mode": "plan",
-        "model": "local/Unsloth/Gemma4-12B",
+        "model": "llama.cpp/Unsloth/Qwen3.5-9B",
       },
       "type": "registry",
     },
     "codex-acp": {
+      "type": "registry",
+    },
+    "opencode": {
       "default_config_options": {
-        "model": "gpt-5.5",
+        "mode": "plan",
+        "model": "local/Unsloth/Qwen3.5-9B",
       },
       "type": "registry",
     },
@@ -296,13 +310,27 @@
 
     "tailwindcss-language-server": {
       "settings": {
+        "classFunctions": ["cva", "cx"],
         "classAttributes": ["class", "className", "ngClass", "styles"],
+        "experimental": {
+          "classRegex": [
+            "\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttributeNS\\(.*,\\s*['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.setAttribute\\(['\"]class['\"],\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.add\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.remove\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.toggle\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.contains\\(['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\(\\s*['\"]([^'\"]*)['\"]",
+            "\\.classList\\.replace\\([^,)]+,\\s*['\"]([^'\"]*)['\"]",
+          ],
+        },
       },
     },
   },
 
   // Disable language server
-  "language_servers": ["!typescript-language-server", "..."],
+  "language_servers": ["!typescript-language-server", "!tsgo", "..."],
 
   // --------- Languages ---------
   "languages": {
