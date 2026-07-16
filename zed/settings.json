@@ -8,6 +8,8 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // --------- Editor Config ---------
+  "format_on_save": "on",
+  "show_edit_predictions": true,
   "ssh_connections": [
     {
       "host": "chillie-server",
@@ -23,58 +25,11 @@
   "semantic_tokens": "combined",
   "cli_default_open_behavior": "existing_window",
   "language_models": {
-    "openai_compatible": {
-      "Llama.cpp": {
-        "api_url": "http://127.0.0.1:2121/v1",
-        "available_models": [
-          {
-            "name": "Unsloth/Qwen3.5-9B",
-            "display_name": "Qwen 3.5 9B",
-            "max_tokens": 128000,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-              "chat_completions": true,
-              "interleaved_reasoning": true,
-            },
-          },
-          {
-            "name": "Unsloth/Gemma4-12B",
-            "display_name": "Gemma 4 12B",
-            "max_tokens": 60000,
-            "capabilities": {
-              "tools": true,
-              "images": true,
-              "parallel_tool_calls": true,
-              "prompt_cache_key": true,
-              "chat_completions": true,
-              "interleaved_reasoning": true,
-            },
-          },
-        ],
-      },
+    "llama.cpp": {
+      "api_url": "http://localhost:2121",
     },
   },
-  "agent_servers": {
-    "pi-acp": {
-      "default_config_options": {
-        "model": "llama.cpp/Unsloth/Qwen3.5-9B",
-      },
-      "type": "registry",
-    },
-    "codex-acp": {
-      "type": "registry",
-    },
-    "opencode": {
-      "default_config_options": {
-        "mode": "plan",
-        "model": "local/Unsloth/Qwen3.5-9B",
-      },
-      "type": "registry",
-    },
-  },
+  "agent_servers": {},
   "edit_predictions": {
     "provider": "zed",
     "mode": "subtle",
@@ -83,7 +38,7 @@
   "agent": {
     "default_profile": "write",
     "default_model": {
-      "provider": "Llama.cpp",
+      "provider": "llama.cpp",
       "model": "Unsloth/Qwen3.5-9B",
       "enable_thinking": false,
     },
@@ -104,7 +59,6 @@
     "file_icons": false,
     "tree_view": true,
     "collapse_untracked_diff": false,
-    "sort_by_path": false,
     "status_style": "icon",
     "default_width": 240.0,
     "dock": "left",
@@ -174,6 +128,7 @@
   "soft_wrap": "editor_width",
   "tab_size": 2,
   "toolbar": {
+    "code_actions": false,
     "agent_review": false,
     "selections_menu": false,
     "quick_actions": false,
@@ -206,6 +161,7 @@
   "auto_update": false,
   "icon_theme": "Material Icon Theme",
   "session": {
+    "restore_unsaved_buffers": false,
     "trust_all_worktrees": false,
   },
   "telemetry": {
@@ -281,23 +237,6 @@
   },
 
   "lsp": {
-    "eslint": {
-      "settings": {
-        "rulesCustomizations": [
-          { "rule": "style/*", "severity": "off", "fixable": true },
-          { "rule": "format/*", "severity": "off", "fixable": true },
-          { "rule": "*-indent", "severity": "off", "fixable": true },
-          { "rule": "*-spacing", "severity": "off", "fixable": true },
-          { "rule": "*-spaces", "severity": "off", "fixable": true },
-          { "rule": "*-order", "severity": "off", "fixable": true },
-          { "rule": "*-dangle", "severity": "off", "fixable": true },
-          { "rule": "*-newline", "severity": "off", "fixable": true },
-          { "rule": "*quotes", "severity": "off", "fixable": true },
-          { "rule": "*semi", "severity": "off", "fixable": true },
-        ],
-      },
-    },
-
     "vscode-css-language-server": {
       "settings": {
         "css": {
@@ -330,7 +269,12 @@
   },
 
   // Disable language server
-  "language_servers": ["!typescript-language-server", "!tsgo", "..."],
+  "language_servers": [
+    "!typescript-language-server",
+    "!typescript-ls",
+    "vtsls",
+    "...",
+  ],
 
   // --------- Languages ---------
   "languages": {
@@ -369,7 +313,6 @@
         "trailingComma": "es5",
         "bracketSpacing": true,
         "arrowParens": "always",
-        "endOfLine": "lf",
       },
     },
     "TSX": {
@@ -389,7 +332,6 @@
         "bracketSameLine": true,
         "arrowParens": "always",
         "singleAttributePerLine": true,
-        "endOfLine": "lf",
         "htmlWhitespaceSensitivity": "ignore",
 
         "plugins": ["prettier-plugin-tailwindcss"],
