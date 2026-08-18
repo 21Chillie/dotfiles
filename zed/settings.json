@@ -29,7 +29,14 @@
       "api_url": "http://localhost:2121",
     },
   },
-  "agent_servers": {},
+  "agent_servers": {
+    "pi-acp": {
+      "default_config_options": {
+        "thought_level": "medium",
+      },
+      "type": "registry",
+    },
+  },
   "edit_predictions": {
     "provider": "zed",
     "mode": "subtle",
