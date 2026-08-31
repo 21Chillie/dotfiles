@@ -14,14 +14,14 @@ binds {
     Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
 
 	// ─── Noctalia Extension ───
-	Mod+G                         	    hotkey-overlay-title="Open: Game Launcher" { spawn "heroic"; }
+	Mod+G                         	    hotkey-overlay-title="Open: Game Launcher" { spawn "faugus-launcher"; }
 	Mod+Slash                         	hotkey-overlay-title="Open: Keybind Cheatsheet" { spawn-sh "noctalia msg panel-toggle kenn/keybind-cheatsheet:cheatsheet"; }
 	Mod+Period                         	hotkey-overlay-title="Open: Drive Health" { spawn-sh "noctalia msg panel-toggle gustav0ar/drive-health:drives"; }		
 
     // ─── Applications ───
     Mod+Return                          hotkey-overlay-title="Open Terminal: Kitty" { spawn "kitty"; }
     CTRL+SHIFT+ESCAPE					hotkey-overlay-title="Open: System Monitor" { spawn-sh "kitty -e btop"; }
-	CTRL+ALT+C							hotkey-overlay-title="Open: Color Picker" { spawn-sh "hyprpicker"; }
+	CTRL+ALT+C							hotkey-overlay-title="Open: Color Picker" { spawn-sh "noctalia msg panel-toggle oldirtty/color_picker:panel"; }
 
     // ─── File Manager ───
     Mod+E                               hotkey-overlay-title="Open File Manager: Dolphin" { spawn "dolphin"; }
