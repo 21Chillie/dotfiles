@@ -33,7 +33,7 @@ binds {
 	// ─── Browser ───
 	Mod+B                               hotkey-overlay-title="Open Browser: Zen" { spawn "zen-browser"; }	
 	Mod+ALT+B                           hotkey-overlay-title="Open Browser: Brave" { spawn "brave-origin"; }
-	Mod+CTRL+B                          hotkey-overlay-title="Open Browser: Firefox Developer" { spawn "firefox-developer-edition"; }
+	Mod+CTRL+B                          hotkey-overlay-title="Open Browser: Helium" { spawn "helium-browser"; }
 	
     // ─── Audio Controls & Brightness ───
     XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
