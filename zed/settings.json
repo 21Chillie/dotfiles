@@ -40,7 +40,7 @@
     },
   },
   "edit_predictions": {
-    "provider": "zed",
+    "provider": "ollama",
     "mode": "subtle",
     "allow_data_collection": "no",
   },
